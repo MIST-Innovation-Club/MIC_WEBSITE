@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events — MIST Innovation Club</title>
+    <link rel="stylesheet" href="style2.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+        <div class="bg-network" aria-hidden="true">
+        <svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <radialGradient id="bgBase" cx="70%" cy="15%" r="90%">
+                    <stop offset="0%" stop-color="#132463"/>
+                    <stop offset="45%" stop-color="#0a1338"/>
+                    <stop offset="100%" stop-color="#04061a"/>
+                </radialGradient>
+
+                <radialGradient id="glowBlobA" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%" stop-color="#2b4fb0" stop-opacity="0.55"/>
+                    <stop offset="100%" stop-color="#2b4fb0" stop-opacity="0"/>
+                </radialGradient>
+                <radialGradient id="glowBlobB" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%" stop-color="#1f3a8f" stop-opacity="0.45"/>
+                    <stop offset="100%" stop-color="#1f3a8f" stop-opacity="0"/>
+                </radialGradient>
+                <radialGradient id="nodeGlow" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%" stop-color="#bcd4ff" stop-opacity="0.9"/>
+                    <stop offset="100%" stop-color="#bcd4ff" stop-opacity="0"/>
+                </radialGradient>
+
+                <filter id="softBlur" x="-50%" y="-50%" width="200%" height="200%">
+                    <feGaussianBlur stdDeviation="18"/>
+                </filter>
+                <filter id="lineBlur" x="-50%" y="-50%" width="200%" height="200%">
+                    <feGaussianBlur stdDeviation="0.6"/>
+                </filter>
+                <filter id="dotBlur" x="-50%" y="-50%" width="300%" height="300%">
+                    <feGaussianBlur stdDeviation="6"/>
+                </filter>
+            </defs>
+
+            <rect x="0" y="0" width="1600" height="900" fill="url(#bgBase)"/>
+
+            <ellipse cx="480" cy="560" rx="420" ry="300" fill="url(#glowBlobA)" filter="url(#softBlur)"/>
+            <ellipse cx="1180" cy="180" rx="360" ry="260" fill="url(#glowBlobB)" filter="url(#softBlur)"/>
+            <ellipse cx="820" cy="760" rx="300" ry="180" fill="url(#glowBlobB)" filter="url(#softBlur)"/>
+
+            <g stroke="#7fa0e6" stroke-opacity="0.22" stroke-width="1.4" filter="url(#lineBlur)" fill="none">
+                <path d="M 60 40 L 640 430"/>
+                <path d="M 640 430 L 1240 60"/>
+                <path d="M 640 430 L 1460 340"/>
+                <path d="M 640 430 L 470 620"/>
+                <path d="M 470 620 L 190 760"/>
+                <path d="M 470 620 L 720 830"/>
+                <path d="M 1240 60 L 1520 210"/>
+            </g>
+
+            <g>
+                <circle cx="640" cy="430" r="26" fill="url(#nodeGlow)" filter="url(#dotBlur)"/>
+                <circle cx="470" cy="620" r="18" fill="url(#nodeGlow)" filter="url(#dotBlur)"/>
+                <circle cx="1240" cy="60" r="16" fill="url(#nodeGlow)" filter="url(#dotBlur)"/>
+                <circle cx="1460" cy="340" r="14" fill="url(#nodeGlow)" filter="url(#dotBlur)"/>
+                <circle cx="190" cy="760" r="12" fill="url(#nodeGlow)" filter="url(#dotBlur)"/>
+                <circle cx="720" cy="830" r="12" fill="url(#nodeGlow)" filter="url(#dotBlur)"/>
+                <circle cx="1520" cy="210" r="10" fill="url(#nodeGlow)" filter="url(#dotBlur)"/>
+                <circle cx="60" cy="40" r="10" fill="url(#nodeGlow)" filter="url(#dotBlur)"/>
+            </g>
+
+            <g fill="#dbe7ff">
+                <circle cx="640" cy="430" r="4.5"/>
+                <circle cx="470" cy="620" r="3.2"/>
+                <circle cx="1240" cy="60" r="3"/>
+                <circle cx="1460" cy="340" r="2.6"/>
+                <circle cx="190" cy="760" r="2.4"/>
+                <circle cx="720" cy="830" r="2.4"/>
+                <circle cx="1520" cy="210" r="2.2"/>
+                <circle cx="60" cy="40" r="2.2"/>
+            </g>
+        </svg>
+    </div>
+    <nav class="navbar">
+        <div class="logo"><img src="assets/MIC LOGO.png" alt="MIC Logo" width="55" height="55"></div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="events.html" class="active">Events</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="people.html">People</a></li>
+            <!--<li><a href="#" class="nav-login">Login</a></li>>-->
+        </ul>
+        <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </nav>
+
+    <header class="page-header"><h1>Events</h1></header>
+
+    <!-- Ongoing Events -->
+    <section class="section-block">
+        <h2>Ongoing Events</h2>
+        <div class="ongoing-events">
+            <article class="ongoing-card">
+                <div class="ongoing-card-img"><div class="placeholder-img"><img src="assets/pitchCamp.png" width="600px" height="500px"></div></div>
+                <div class="ongoing-card-body">
+                    <h3>Pitch Camp 4.0</h3>
+                    <p>A hands-on case competition where teams unveil, innovate, and pitch real-world business solutions to a panel of judges.</p>
+                    <button>Go to event page</button>
+                </div>
+            </article>
+
+            <article class="ongoing-card">
+                <div class="ongoing-card-img"><div class="placeholder-img"><img src="assets/peptalk.png" width="600px" height="500px"></div></div>
+                <div class="ongoing-card-body">
+                    <h3>Pep Talk 6.0 : MIST to MIT</h3>
+                    <p>One voice, one story — a session of inspiration featuring a MIST alum's journey to MIT.</p>
+                    <button>Go to event page</button>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Past Events -->
+    <section class="section-block">
+        <h2>Past Events</h2>
+        <div class="past-events-grid" id="pastEventsGrid"></div>
+    </section>
+
+    <!-- Workshops -->
+    <section class="section-block">
+        <h2>Workshops</h2>
+        <div class="workshops-row">
+            <article class="workshop-card">
+                <!-- <div class="workshop-card-img">
+                    <div class="placeholder-img">Legit Adda Session</div>
+                    <span class="workshop-badge">Free</span>
+                </div> -->
+                <div class="workshop-card-body">
+                    <img class="workshop-card-img" src="assets/legitadda.jpg" width="400px" height="400px">
+                    <h4>Lorem Ipsum: Dolom Set Amet</h4>
+                    <p>Lorem ipsum dolom set amet alal alala kjshaskjh kdakhdaskj dhakjd akdha kdakashda k askdha dadh ksajd.</p>
+                    <button>View Course</button>
+                </div>
+            </article>
+              <article class="workshop-card">
+                <!-- <div class="workshop-card-img">
+                    <div class="placeholder-img">Legit Adda Session</div>
+                    <span class="workshop-badge">Free</span>
+                </div> -->
+                <div class="workshop-card-body">
+                    <img class="workshop-card-img" src="assets/legitadda.jpg" width="400px" height="400px">
+                    <h4>Lorem Ipsum: Dolom Set Amet</h4>
+                    <p>Lorem ipsum dolom set amet alal alala kjshaskjh kdakhdaskj dhakjd akdha kdakashda k askdha dadh ksajd.</p>
+                    <button>View Course</button>
+                </div>
+            </article>
+              <article class="workshop-card">
+                <!-- <div class="workshop-card-img">
+                    <div class="placeholder-img">Legit Adda Session</div>
+                    <span class="workshop-badge">Free</span>
+                </div> -->
+                <div class="workshop-card-body">
+                    <img class="workshop-card-img" src="assets/legitadda.jpg" width="400px" height="400px">
+                    <h4>Lorem Ipsum: Dolom Set Amet</h4>
+                    <p>Lorem ipsum dolom set amet alal alala kjshaskjh kdakhdaskj dhakjd akdha kdakashda k askdha dadh ksajd.</p>
+                    <button>View Course</button>
+                </div>
+            </article>
+
+        
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="footer-left">
+            <h3 class="footer-title">MIST Innovation Club</h3>
+            <div class="footer-links"><a href="#">About</a><a href="#">Become a Member</a></div>
+            <div class="social-icons">
+                <a href="#" class="social-icon"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="social-icon"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="#" class="social-icon"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+            <div class="contact-info">
+                <div class="contact-item"><i class="fa-solid fa-location-dot"></i><span>MIST, Mirpur Cantonment, Dhaka, Bangladesh</span></div>
+                <div class="contact-item"><i class="fa-solid fa-envelope"></i><span>mist.innovation.club@gmail.com</span></div>
+                <div class="contact-item"><i class="fa-solid fa-globe"></i><span>https://innovationclub.mist.ac.bd/</span></div>
+            </div>
+        </div>
+        <div class="footer-right">
+            <!-- <div class="footer-calendar"></div> -->
+            <div class="copyright">© 2026 MIST Innovation Club</div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Generate 9 placeholder past-event cards
+        const grid = document.getElementById('pastEventsGrid');
+        for (let i = 1; i <= 9; i++) {
+            const card = document.createElement('div');
+            card.className = 'past-event-card';
+            card.innerHTML = `<div class="placeholder-img">Past Event ${i}</div>`;
+            grid.appendChild(card);
+        }
+    </script>
+</body>
+</html>
