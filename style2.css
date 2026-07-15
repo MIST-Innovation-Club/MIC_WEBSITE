@@ -9,7 +9,13 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }.year-tab
-
+html, body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevents horizontal scrolling */
+    position: relative;
+}
 html {
     scroll-behavior: smooth;
 }
