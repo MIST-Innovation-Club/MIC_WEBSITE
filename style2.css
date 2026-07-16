@@ -9,8 +9,10 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }.year-tab
+
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 body {
@@ -36,6 +38,7 @@ body {
     color: white;
     overflow-x: hidden;
     position: relative;
+    overflow-x: hidden;
 }
 
 a { color: inherit; }
@@ -49,7 +52,7 @@ button { font-family: inherit; }
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
+    width: 100%; /* Changed from 100vw */
     height: 100vh;
     z-index: -1;
     overflow: hidden;
@@ -451,6 +454,8 @@ button { font-family: inherit; }
     border-radius: 30px;
     width: fit-content;
     backdrop-filter: blur(8px);
+    flex-wrap: wrap; 
+    max-width: 100%;
 }
 
 .year-tab {
@@ -824,9 +829,26 @@ button { font-family: inherit; }
     .people-headline { padding: 60px 20px; }
     .people-headline .headline-word { font-size: 2.4rem; }
     .people-headline .headline-word.one, .people-headline .headline-word.two { margin-left: 0; margin-right: 0; text-align: center; }
+    /* 1. Make cards flexible but capped */
+    .member-card { 
+        width: 100%; 
+        max-width: 130px; 
+        margin: 0 auto; 
+    }
+
+    /* 2. Reduce desktop padding to fit mobile viewports */
+    .exec-grid { 
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 25px 15px; 
+        padding: 0 15px 50px; /* Reduced horizontal padding */
+    }
+    
+    .panel-grid { 
+        gap: 25px 20px; 
+        padding: 0 15px 50px; /* Reduced horizontal padding */
+    }
 }
 
 @media (max-width: 420px) {
     .past-events-grid, .workshops-row, .exec-grid { grid-template-columns: 1fr 1fr; }
 }
-
