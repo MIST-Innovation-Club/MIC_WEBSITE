@@ -830,4 +830,3 @@ button { font-family: inherit; }
     .past-events-grid, .workshops-row, .exec-grid { grid-template-columns: 1fr 1fr; }
 }
 
-@media screen and (max-width:768px){.cards-container,.events-container,.past-events-grid,.workshops-row{display:grid!important;grid-template-columns:1fr!important;gap:20px!important;justify-items:center!important}.card,.event-card,.past-event-card,.workshop-card{width:100%!important;max-width:340px!important;margin:0 auto!important}.card img,.event-card img,.past-event-card img,.workshop-card img{width:100%!important;height:auto!important;display:block!important}}
