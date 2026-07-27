@@ -96,8 +96,6 @@ export default function Home() {
                   e.currentTarget.nextElementSibling.style.display = "flex";
                 }}
               />
-              <div className="hidden flex-col items-center gap-2 text-ink-400 text-center">
-              </div>
             </div>
           </motion.div>
         </div>
