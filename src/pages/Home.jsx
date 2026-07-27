@@ -83,19 +83,19 @@ export default function Home() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
-            className="relative aspect-square w-full max-w-md mx-auto"
+            className="relative aspect-square w-full max-w-lg xl:max-w-xl mx-auto flex items-center justify-center"
           >
-            <div className="absolute -inset-6 rounded-full bg-brand/10 blur-3xl -z-10" />
-            <div className="h-full w-full rounded-2xl border border-ink-400/20 bg-ink-900/40 backdrop-blur-sm flex items-center justify-center overflow-hidden p-8">
-              <img
-                src={`${import.meta.env.BASE_URL}mic-logo.png`}
-                alt="MIST Innovation Club logo"
-                className="w-full h-full object-contain"
-                onError={(e) => {
+            {/* Soft background glow to help the white logo pop over the grid lines */}
+            <div className="absolute inset-0 rounded-full bg-brand/15 blur-3xl -z-10" />
+
+            <img
+              src={`${import.meta.env.BASE_URL}mic-logo.png`}
+              alt="MIST Innovation Club logo"
+              className="w-full h-full object-contain"
+              onError={(e) => {
                 e.currentTarget.style.display = "none";
-                  }}
-              />
-            </div>
+              }}
+            />
           </motion.div>
         </div>
       </section>
