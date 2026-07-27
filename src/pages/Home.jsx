@@ -88,13 +88,12 @@ export default function Home() {
             <div className="absolute -inset-6 rounded-full bg-brand/10 blur-3xl -z-10" />
             <div className="h-full w-full rounded-2xl border border-ink-400/20 bg-ink-900/40 backdrop-blur-sm flex items-center justify-center overflow-hidden p-8">
               <img
-                src="/mic-logo.png"
+                src={`${import.meta.env.BASE_URL}mic-logo.png`}
                 alt="MIST Innovation Club logo"
                 className="w-full h-full object-contain"
                 onError={(e) => {
-                  e.currentTarget.style.display = "none";
-                  e.currentTarget.nextElementSibling.style.display = "flex";
-                }}
+                e.currentTarget.style.display = "none";
+                  }}
               />
             </div>
           </motion.div>
