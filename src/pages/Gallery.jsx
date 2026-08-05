@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { useCollection } from "../hooks/useCollection";
 import { dummyGallery, galleryYears } from "../data/dummy";
 import LoadingSpinner from "../components/LoadingSpinner";
@@ -13,12 +13,30 @@ export default function Gallery() {
   const { data, loading } = useCollection("gallery", "order", "asc");
   const items = data.length ? data : dummyGallery;
 
-  const years = useMemo(() => {
-    const set = new Set([...galleryYears, ...items.map((i) => String(i.year || CURRENT_YEAR))]);
-    return [...set].sort((a, b) => b - a);
-  }, [items]);
+  const itemYears = useMemo(
+    () => [...new Set(items.map((i) => String(i.year || CURRENT_YEAR)))].sort((a, b) => b - a),
+    [items]
+  );
 
-  const [year, setYear] = useState(years[0]);
+  const years = useMemo(() => {
+    const set = new Set([...galleryYears, ...itemYears]);
+    return [...set].sort((a, b) => b - a);
+  }, [itemYears]);
+
+  const [year, setYear] = useState(itemYears[0]);
+  const userChangedYear = useRef(false);
+
+  useEffect(() => {
+    if (!loading && !userChangedYear.current && itemYears.length) {
+      setYear(itemYears[0]);
+    }
+  }, [loading, itemYears]);
+
+  const handleYearChange = (y) => {
+    userChangedYear.current = true;
+    setYear(y);
+  };
+
   const groups = useMemo(() => {
     const inYear = items.filter((i) => String(i.year || CURRENT_YEAR) === year);
     const byEvent = {};
@@ -38,7 +56,7 @@ export default function Gallery() {
         <p className="text-ink-400 max-w-lg mb-10">Moments from workshops, competitions, and club life.</p>
       </div>
 
-      <YearTabs years={years} active={year} onChange={setYear} />
+      <YearTabs years={years} active={year} onChange={handleYearChange} />
 
       {loading ? (
         <LoadingSpinner />
