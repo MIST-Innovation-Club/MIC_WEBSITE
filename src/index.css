@@ -1,0 +1,130 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: #0a0e1a;
+  }
+  ::selection {
+    background-color: #a78bfa;
+    color: #0a0e1a;
+  }
+  :focus-visible {
+    outline: 2px solid #e8a33d;
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  .eyebrow {
+    @apply font-mono text-xs tracking-[0.2em] uppercase text-circuit;
+  }
+
+  .section-pad {
+    @apply px-6 sm:px-10 lg:px-20 py-20 md:py-28;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-brand hover:bg-brand-light
+      text-white font-semibold px-6 py-3 transition-colors duration-200 shadow-glow-blue;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-ink-400/40
+      hover:border-circuit hover:text-circuit text-ink-100 font-semibold px-6 py-3 transition-colors duration-200;
+  }
+
+  .card {
+    @apply rounded-2xl border border-ink-400/15 bg-ink-900/60 backdrop-blur-sm;
+  }
+
+  .input-field {
+    @apply w-full rounded-lg bg-ink-900 border border-ink-400/25 px-4 py-2.5 text-ink-100
+      placeholder:text-ink-400 focus:border-circuit outline-none transition-colors;
+  }
+
+  .label-field {
+    @apply block text-sm font-medium text-ink-400 mb-1.5;
+  }
+}
+
+@layer utilities {
+  .bg-grid {
+    background-image:
+      linear-gradient(rgba(139, 153, 191, 0.07) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(139, 153, 191, 0.07) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  .text-gradient {
+    background: linear-gradient(90deg, #6b8cff 0%, #a78bfa 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Swiper overrides */
+.mic-swiper .swiper-pagination-bullet {
+  background: #8c99bf;
+  opacity: 0.5;
+}
+.mic-swiper .swiper-pagination-bullet-active {
+  background: #a78bfa;
+  opacity: 1;
+}
+.mic-swiper .swiper-button-next,
+.mic-swiper .swiper-button-prev {
+  color: #a78bfa;
+}
+
+/* Gallery event carousel — smooth centered slide with dimmed peeking neighbors */
+.gallery-swiper {
+  padding-bottom: 44px !important;
+}
+.gallery-swiper .swiper-slide {
+  opacity: 0.4;
+  transform: scale(0.9);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+.gallery-swiper .swiper-slide-active {
+  opacity: 1;
+  transform: scale(1);
+}
+.gallery-swiper .swiper-pagination-bullet {
+  width: 6px;
+  height: 6px;
+  border-radius: 9999px;
+  background: #8c99bf;
+  opacity: 0.3;
+  transition: all 0.3s ease;
+}
+.gallery-swiper .swiper-pagination-bullet-active {
+  width: 24px;
+  border-radius: 9999px;
+  background: #a78bfa;
+  opacity: 1;
+}
+.gallery-swiper .swiper-button-next,
+.gallery-swiper .swiper-button-prev {
+  color: #a78bfa;
+}
+.gallery-swiper .swiper-button-next:after,
+.gallery-swiper .swiper-button-prev:after {
+  font-size: 20px;
+}

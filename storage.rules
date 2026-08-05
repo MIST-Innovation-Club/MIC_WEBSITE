@@ -1,0 +1,32 @@
+rules_version = '2';
+
+service firebase.storage {
+  match /b/{bucket}/o {
+
+    // There's no public sign-up in this app — accounts are created manually
+    // in the Firebase Console, so any account that can sign in is a club
+    // admin by definition.
+    function isAdmin() {
+      return request.auth != null;
+    }
+
+    match /events/{fileName} {
+      allow read: if true;
+      allow write: if isAdmin() && request.resource.size < 8 * 1024 * 1024
+        && request.resource.contentType.matches('image/.*');
+    }
+
+    match /gallery/{fileName} {
+      allow read: if true;
+      allow write: if isAdmin() && request.resource.size < 8 * 1024 * 1024
+        && request.resource.contentType.matches('image/.*');
+    }
+
+    match /people/{fileName} {
+      allow read: if true;
+      allow write: if isAdmin() && request.resource.size < 8 * 1024 * 1024
+        && request.resource.contentType.matches('image/.*');
+    }
+  }
+}
+

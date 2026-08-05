@@ -1,0 +1,42 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // There's no public sign-up in this app — accounts are created manually
+    // in the Firebase Console (Authentication -> Users -> Add user), so any
+    // account that can sign in is a club admin by definition.
+    function isAdmin() {
+      return request.auth != null;
+    }
+
+    // Public content: anyone can read, only signed-in admins can write.
+    match /events/{docId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    match /gallery/{docId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    match /people/{docId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    match /news/{docId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    // Site-wide singleton documents, e.g. settings/founderQuote
+    // (the editable Commandant's Message on the People page).
+    match /settings/{docId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+  }
+}
+
