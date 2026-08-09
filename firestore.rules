@@ -26,6 +26,11 @@ service cloud.firestore {
       allow write: if isAdmin();
     }
 
+    match /regulatoryBody/{docId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
     match /news/{docId} {
       allow read: if true;
       allow write: if isAdmin();
@@ -39,4 +44,3 @@ service cloud.firestore {
     }
   }
 }
-
