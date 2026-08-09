@@ -10,6 +10,8 @@ import Events from "./pages/Events";
 import EventDetail from "./pages/EventDetail";
 import Gallery from "./pages/Gallery";
 import People from "./pages/People";
+import RegulatoryBody from "./pages/RegulatoryBody";
+import Contributors from "./pages/Contributors";
 import Login from "./pages/Login";
 import NotFound from "./pages/NotFound";
 
@@ -20,6 +22,7 @@ import ManageGallery from "./pages/admin/ManageGallery";
 import ManagePeople from "./pages/admin/ManagePeople";
 import ManageMessage from "./pages/admin/ManageMessage";
 import ManageNews from "./pages/admin/ManageNews";
+import ManageRegulatoryBody from "./pages/admin/ManageRegulatoryBody";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -50,6 +53,8 @@ export default function App() {
         <Route path="/events/:id" element={<SiteLayout><EventDetail /></SiteLayout>} />
         <Route path="/gallery" element={<SiteLayout><Gallery /></SiteLayout>} />
         <Route path="/people" element={<SiteLayout><People /></SiteLayout>} />
+        <Route path="/regulatory-body" element={<SiteLayout><RegulatoryBody /></SiteLayout>} />
+        <Route path="/contributors" element={<SiteLayout><Contributors /></SiteLayout>} />
         <Route path="/login" element={<SiteLayout><Login /></SiteLayout>} />
 
         <Route
@@ -64,6 +69,7 @@ export default function App() {
           <Route path="events" element={<ManageEvents />} />
           <Route path="gallery" element={<ManageGallery />} />
           <Route path="people" element={<ManagePeople />} />
+          <Route path="regulatory-body" element={<ManageRegulatoryBody />} />
           <Route path="message" element={<ManageMessage />} />
           <Route path="news" element={<ManageNews />} />
         </Route>
