@@ -107,7 +107,7 @@ export default function ManagePeople() {
                 <option value="Executive">Executive Member</option>
               </select>
             </div>
-            {(form.panelType === "Executive" && (
+            {form.panelType === "Executive" && (
               <div>
                 <label className="label-field">Department (optional)</label>
                 <input placeholder="e.g. Marketing, Research & Development" className="input-field" value={form.department} onChange={(e) => setForm((f) => ({ ...f, department: e.target.value }))} />
