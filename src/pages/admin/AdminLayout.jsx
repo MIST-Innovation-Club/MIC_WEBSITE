@@ -1,5 +1,5 @@
 import { NavLink, Outlet, Link } from "react-router-dom";
-import { LayoutDashboard, CalendarDays, Images, Users, Newspaper, Quote, LogOut, Cpu, ExternalLink } from "lucide-react";
+import { LayoutDashboard, CalendarDays, Images, Users, Newspaper, Quote, LogOut, Cpu, ExternalLink, ShieldCheck } from "lucide-react";
 import { useAuth } from "../../context/AuthContext";
 
 const links = [
@@ -7,6 +7,7 @@ const links = [
   { to: "/admin/events", label: "Events", icon: CalendarDays },
   { to: "/admin/gallery", label: "Gallery", icon: Images },
   { to: "/admin/people", label: "People", icon: Users },
+  { to: "/admin/regulatory-body", label: "Regulatory Body", icon: ShieldCheck },
   { to: "/admin/message", label: "Commandant's Message", icon: Quote },
   { to: "/admin/news", label: "News", icon: Newspaper },
 ];
