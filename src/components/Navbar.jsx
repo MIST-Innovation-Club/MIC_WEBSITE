@@ -10,7 +10,7 @@ const links = [
   { to: "/gallery", label: "Gallery" },
   { to: "/regulatory body", label: "Regulatory Body" },
   { to: "/people", label: "People" },
-  { to: "/webmaster", label: "Webmaster" },
+  { to: "/contributors", label: "Contributors" },
 ];
 
 export default function Navbar() {
