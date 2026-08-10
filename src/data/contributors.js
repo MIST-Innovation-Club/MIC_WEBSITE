@@ -19,7 +19,7 @@ export const contributors = [
     id: "contributor-3",
     name: "Abidur Rahman",
     role: "Frontend Developer",
-    imageUrl: "",
+    imageUrl: "https://res.cloudinary.com/d4fmgl91/image/upload/v1786339749/495918269_2221959718224924_3204958522959199778_n_gu6uft.jpg",
   },
   {
     id: "contributor-4",
