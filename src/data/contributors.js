@@ -5,8 +5,38 @@
 export const contributors = [
   {
     id: "contributor-1",
-    name: "Full Name",
-    role: "Contribution / Role",
+    name: "Ahsan Nafim",
+    role: "Supervisor",
+    imageUrl: "",
+  },
+  {
+    id: "contributor-2",
+    name: "Alvi Binte Zamil",
+    role: "Supervisor",
+    imageUrl: "",
+  },
+  {
+    id: "contributor-3",
+    name: "Abidur Rahman",
+    role: "Frontend Developer",
+    imageUrl: "",
+  },
+  {
+    id: "contributor-4",
+    name: "Md Adib Hossain",
+    role: "Frontend & Backend Developer",
+    imageUrl: "https://res.cloudinary.com/d4fmgl91/image/upload/v1786339209/467527966_1085430433365425_4958874643753295138_n_srs23v.jpg",
+  },
+  {
+    id: "contributor-5",
+    name: "Syed Fairuz Mahdi",
+    role: "Frontend Developer",
+    imageUrl: "https://res.cloudinary.com/d4fmgl91/image/upload/v1786339209/447829588_999915675044672_324350632139959860_n_klmoyk.jpg",
+  },
+  {
+    id: "contributor-6",
+    name: "Mrittika Joya",
+    role: "Designer",
     imageUrl: "",
   },
   // Add more contributors here, following the same shape.
