@@ -53,6 +53,13 @@ export default function People() {
   const presidential = inYear.filter((p) => (p.panelType || "Presidential") === "Presidential");
   const executive = inYear.filter((p) => p.panelType === "Executive");
 
+  // Separate top leadership (President & General Secretary) from other presidential members
+  const topPresidents = presidential.filter((p) => 
+    p.role?.toLowerCase().includes("president") && !p.role?.toLowerCase().includes("vice") ||
+    p.role?.toLowerCase().includes("general secretary")
+  );
+  const otherPresidents = presidential.filter((p) => !topPresidents.includes(p));
+
   return (
     <div className="section-pad">
       <SectionTag label="People" />
@@ -111,43 +118,96 @@ export default function People() {
       ) : (
         <>
           {presidential.length > 0 && (
-            <div className="mb-16">
-              <h2 className="font-display font-semibold text-2xl text-center text-ink-100 mb-8">Presidential Panel</h2>
-              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 max-w-5xl mx-auto justify-center">
-                {presidential.map((p, i) => (
-                  <motion.div
-                    key={p.id}
-                    initial={{ opacity: 0, y: 16 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: "-40px" }}
-                    transition={{ duration: 0.4, delay: i * 0.08 }}
-                    className="card overflow-hidden group hover:border-circuit/40 transition-colors"
-                  >
-                    <div className="aspect-square bg-ink-900 flex items-center justify-center overflow-hidden">
-                      {p.imageUrl ? (
-                        <img 
-                          src={p.imageUrl} 
-                          alt={p.name} 
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
-                        />
-                      ) : (
-                        <UserRound className="h-8 w-8 text-ink-400/40" />
-                      )}
-                    </div>
-                    <div className="p-3.5 text-center">
-                      <p className="font-semibold text-ink-100 text-sm">{p.name}</p>
-                      <p className="text-xs text-circuit font-mono mt-0.5">{p.role}</p>
-                      {p.department && <p className="text-[11px] text-ink-400 italic mt-0.5">{p.department}</p>}
-                      <div className="flex justify-center gap-3 mt-2.5">
-                        <a href="#" className="text-ink-400 hover:text-circuit"><Linkedin className="h-3.5 w-3.5" /></a>
-                        <a href="#" className="text-ink-400 hover:text-circuit"><Mail className="h-3.5 w-3.5" /></a>
-                      </div>
-                    </div>
-                  </motion.div>
-                ))}
+  <div className="mb-16 max-w-6xl mx-auto px-4">
+    <h2 className="font-display font-semibold text-2xl text-center text-ink-100 mb-8">
+      Presidential Panel
+    </h2>
+
+    {/* Top Row: President & General Secretary */}
+    <div className="flex flex-wrap justify-center gap-6 mb-6">
+      {topPresidents.map((p, i) => (
+        <motion.div
+          key={p.id}
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-40px" }}
+          transition={{ duration: 0.4, delay: i * 0.08 }}
+          className="card overflow-hidden group hover:border-circuit/40 transition-colors w-full sm:w-[calc(50%-12px)] md:w-64"
+        >
+          <div className="aspect-square bg-ink-900 flex items-center justify-center overflow-hidden">
+            {p.imageUrl ? (
+              <img
+                src={p.imageUrl}
+                alt={p.name}
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+            ) : (
+              <UserRound className="h-8 w-8 text-ink-400/40" />
+            )}
+          </div>
+          <div className="p-3.5 text-center">
+            <p className="font-semibold text-ink-100 text-sm">{p.name}</p>
+            <p className="text-xs text-circuit font-mono mt-0.5">{p.role}</p>
+            {p.department && (
+              <p className="text-[11px] text-ink-400 italic mt-0.5">{p.department}</p>
+            )}
+            <div className="flex justify-center gap-3 mt-2.5">
+              <a href="#" className="text-ink-400 hover:text-circuit">
+                <Linkedin className="h-3.5 w-3.5" />
+              </a>
+              <a href="#" className="text-ink-400 hover:text-circuit">
+                <Mail className="h-3.5 w-3.5" />
+              </a>
+            </div>
+          </div>
+        </motion.div>
+      ))}
+    </div>
+
+    {/* Remaining Presidential Panel Members (Centered Row) */}
+    {otherPresidents.length > 0 && (
+      <div className="flex flex-wrap justify-center gap-6">
+        {otherPresidents.map((p, i) => (
+          <motion.div
+            key={p.id}
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-40px" }}
+            transition={{ duration: 0.4, delay: i * 0.08 }}
+            className="card overflow-hidden group hover:border-circuit/40 transition-colors w-full sm:w-[calc(50%-12px)] md:w-64"
+          >
+            <div className="aspect-square bg-ink-900 flex items-center justify-center overflow-hidden">
+              {p.imageUrl ? (
+                <img
+                  src={p.imageUrl}
+                  alt={p.name}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              ) : (
+                <UserRound className="h-8 w-8 text-ink-400/40" />
+              )}
+            </div>
+            <div className="p-3.5 text-center">
+              <p className="font-semibold text-ink-100 text-sm">{p.name}</p>
+              <p className="text-xs text-circuit font-mono mt-0.5">{p.role}</p>
+              {p.department && (
+                <p className="text-[11px] text-ink-400 italic mt-0.5">{p.department}</p>
+              )}
+              <div className="flex justify-center gap-3 mt-2.5">
+                <a href="#" className="text-ink-400 hover:text-circuit">
+                  <Linkedin className="h-3.5 w-3.5" />
+                </a>
+                <a href="#" className="text-ink-400 hover:text-circuit">
+                  <Mail className="h-3.5 w-3.5" />
+                </a>
               </div>
             </div>
-          )}
+          </motion.div>
+        ))}
+      </div>
+    )}
+  </div>
+)}
 
           {executive.length > 0 && (
             <div>
