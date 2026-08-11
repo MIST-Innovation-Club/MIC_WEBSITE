@@ -7,7 +7,7 @@ export const contributors = [
     id: "contributor-1",
     name: "Ahsan Nafim",
     role: "Supervisor",
-    imageUrl: "",
+    imageUrl: "https://res.cloudinary.com/d4fmgl91/image/upload/v1786470111/IMG_3793.JPG_qduuv2.jpg",
   },
   {
     id: "contributor-2",
