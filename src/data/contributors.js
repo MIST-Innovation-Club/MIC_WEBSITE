@@ -13,7 +13,7 @@ export const contributors = [
     id: "contributor-2",
     name: "Alvi Binte Zamil",
     role: "Supervisor",
-    imageUrl: "",
+    imageUrl: "https://res.cloudinary.com/d4fmgl91/image/upload/v1786512441/IMG_20260129_220006_a5vpph.webp",
   },
   {
     id: "contributor-3",
