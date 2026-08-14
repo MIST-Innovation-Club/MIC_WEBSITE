@@ -22,7 +22,7 @@ function isPast(dateStr) {
 }
 
 export default function Events() {
-  const { data, loading } = useCollection("events", "date", "asc");
+  const { data, loading } = useCollection("events", "date", "desc");
 
   let ongoing, past, workshops;
   if (data.length) {
