@@ -19,7 +19,7 @@ export default function RegulatoryBody() {
       ) : data.length === 0 ? (
         <EmptyState title="No members listed yet" text="Regulatory body members will appear here once added." />
       ) : (
-        <div className="flex flex-wrap justify-center gap-6 max-w-5xl mx-auto">
+        <div className="flex flex-col items-center gap-6 max-w-5xl mx-auto">
   {data.map((p, i) => (
     <motion.div
       key={p.id}
@@ -27,7 +27,7 @@ export default function RegulatoryBody() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-40px" }}
       transition={{ duration: 0.4, delay: (i % 8) * 0.05 }}
-      className="card overflow-hidden group hover:border-circuit/40 transition-colors w-full sm:w-[calc(50%-12px)] md:w-64"
+      className="card overflow-hidden group hover:border-circuit/40 transition-colors w-full max-w-xs"
     >
       <div className="aspect-square bg-ink-900 flex items-center justify-center overflow-hidden">
         {p.imageUrl ? (
